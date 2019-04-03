@@ -1,19 +1,214 @@
 <template>
-<div>
-  <b-card no-body>
-    <b-tabs card >
-      <b-tab title="comming soon" active>
-        <b-card-text>Tab Contents 1</b-card-text>
-      </b-tab>
-      <b-tab title="Tab 2">
-        <b-card-text>Tab Contents 2</b-card-text>
-      </b-tab>
-    </b-tabs>
-  </b-card>
-</div>
+  <b-container>
+    <b-row>
+      <b-col md="6" varient="secondary" class="p-0 m-0 " v-for="card in cards" v-bind:key="card.index">
+        <div class="mt-5 px-3">
+          <b-card :img-src="card.img" img-alt="Card image" img-left class="mb-3">
+            <b-card-text class="text-left font-weight-bold">
+              <div>{{card.heading}}</div>
+              <b-button size="sm" class="my-2 my-sm-0 square-button text-dark img-fluid btn-secondary text-weight-bold" type="submit">{{card.ratingtop}}</b-button>
+            </b-card-text>
+            <b-card-text class="text-left timmer-color">
+              <div>{{card.timer}}</div>
+            </b-card-text>
+            <b-card-text class="text-left">
+              <b-row>
+                <b-col md="12" class="contenthead-font-size">
+                  <b-row>
+                    <b-col md="4" class="contenttext-border-right">{{card.contenthead1}}</b-col>
+                    <b-col md="4" class="contenttext-border-right" >{{card.contenthead2}}</b-col>
+                    <b-col md="4">{{card.contenthead3}}</b-col>
+                  </b-row>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col md="12" class="contenthead-font-size ">
+                  <b-row >
+                    <b-col md="4" class="contenttext-border-right">{{card.contenttext1}}</b-col>
+                    <b-col md="4" class="contenttext-border-right">{{card.contenttext2}}</b-col>
+                    <b-col md="4" >{{card.contenttext3}}</b-col>
+                  </b-row>
+                </b-col>
+              </b-row>
+            </b-card-text>
+            <div class="contenttext-border-bottom pl-0"></div>
+            <div></div>
+            <div></div>
+            <div>
+                <b-button size="sm" class="my-2 my-sm-0  margin-rating text-dark img-fluid rounded-circle btn-secondary text-weight-bold" type="submit">{{card.rating}}</b-button>
+            </div>
+          </b-card>
+        </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 <script>
+import images1 from "../assets/images/img1.jpg";
+import images2 from "../assets/images/img2.jpg";
+import images3 from "../assets/images/img3.jpg";
+import images4 from "../assets/images/img4.jpg";
+import images5 from "../assets/images/img5.jpg";
+import images6 from "../assets/images/img6.jpg";
+import images7 from "../assets/images/img7.jpg";
+import images8 from "../assets/images/img8.jpg";
 export default {
+  data() {
+    return {
+      cards: [
+        {
+          img: images1,
+          heading: "The Girl on Train",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating:"4.4",
+          ratingtop:"G"
+        },
+        {
+          img: images2,
+          heading: "The Magnificent Seven",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating:"4.4",
+          ratingtop:"G"
+        },
+        {
+          img: images3,
+          heading: "Free State of Jones",
+          timer: "02 hours 50 minutes",
+           contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating:"4.4",
+          ratingtop:"G"
+        },
+        {
+          img: images4,
+          heading: "Sausage Party",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating:"4.4",
+          ratingtop:"G"
+        },
+        {
+          img: images5,
+          heading: "Kubo and the Two Strings",
+          timer: "01 hours 20 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating:"4.2",
+          ratingtop:"PG"
+        },
+        {
+          img: images6,
+          heading: "Bad Moms",
+          timer: "02 hours 40 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating:"4.5",
+          ratingtop:"G"
+        },
+        {
+          img: images7,
+          heading: "The Sleeping Beauty - Australia",
+          timer: "02 hours 00 minutes",
+           contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating:"4.4",
+          ratingtop:"PG"
+        },
+        {
+          img: images8,
+          heading: "The Girl With All The Gifts",
+          timer: "02 hours 30 minutes",
+           contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating:"4.2",
+          ratingtop:"G"
+        },
+      ]
+    };
+  }
+};
+</script>
+<style lang="scss">
+.contenthead-font-size {
+  font-size: 12px;
+}
+.contenttext-border-right{
+    border-right: 1px solid #80808029;
+}
+.contenttext-border-bottom{
+    border-bottom: 1px solid #80808029;
+        margin-left: -21px;
+}
+.square-button
+{
+    float: right;
+    margin-right: -20px;
+    margin-top: -24px !important;
     
 }
-</script>
+.card-body
+{
+    background-color:#8080803b;
+}
+.card-img-left 
+{
+        border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.card{
+    border-radius: 0;
+
+}
+.btn-sm, .btn-group-sm > .btn {
+ 
+    border-radius: 0;
+}
+.margin-rating
+{
+    margin-top: 22px !important;
+    font-size: 21px;
+}
+.timmer-color
+{
+    font-size: 14px;
+    color: #f57f09;
+}
+</style>
+

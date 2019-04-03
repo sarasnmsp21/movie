@@ -17,35 +17,6 @@
   </b-container>
 </template>
 <style lang="scss">
-
-.wholediv
-{
-    background-color: black;
-    float: left;
-    height: 36px;
-    line-height: 36px;
-    
-}
-.float-left
-{
-    float: left;
-}
-.float-right
-{
-    float:right;
-}
-.vip-div
-{
-    background-color: purple;
-}
-.shopping-color
-{
-    margin-left: 26px;
-    color: #fb5617;
-}
-.text-font-next-shopp
-{
-    font-size: 13px;
-}
+@import "../assets/scss/header.scss";
 
 </style>

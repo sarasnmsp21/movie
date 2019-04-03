@@ -19,21 +19,5 @@
   </b-container>
 </template>
 <style lang="scss">
-.grid-layout {
-  background-color: black;
-  color: white;
-  height: 166px;
-  line-height: 166px;
-}
-.amy-movie-font {
-  color: black;
-}
-.amy-column1-font-size
-{
-    font-size: 20px;
-}
-.amy-column2-font-size
-{
-    font-size: 12px;
-}
+@import "../assets/scss/section.scss";
 </style>
