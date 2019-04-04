@@ -1,10 +1,12 @@
 <template>
-  <div class="">
-    <!-- Use text in props -->
+  <div class="overflow-auto">
+    <moviaktab></moviaktab>
     <b-pagination
       v-model="currentPage"
       :total-rows="rows"
       :per-page="perPage"
+      first-text="First"
+      prev-text="Prev"
       next-text="Next"
       last-text="Last"
     ></b-pagination>
@@ -12,13 +14,17 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        rows: 100,
-        perPage: 8,
-        currentPage: 1
-      }
-    }
+import moviaktab from "@/components/tab.vue";
+export default {
+  data() {
+    return {
+      rows: 100,
+      perPage: 1,
+      currentPage: 1
+    };
+  },
+  components: {
+    moviaktab
   }
+};
 </script>

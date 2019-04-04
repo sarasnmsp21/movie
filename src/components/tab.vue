@@ -2,11 +2,11 @@
   <b-container>
     <b-row>
       <b-col md="6" varient="secondary" class="p-0 m-0 " v-for="card in cards" v-bind:key="card.index">
-        <div class="mt-5 px-3">
+        <div class=" px-2">
           <b-card :img-src="card.img" img-alt="Card image" img-left class="mb-3">
             <b-card-text class="text-left font-weight-bold">
               <div>{{card.heading}}</div>
-              <b-button size="sm" class="my-2 my-sm-0 square-button text-dark img-fluid btn-secondary text-weight-bold" type="submit">{{card.ratingtop}}</b-button>
+              <b-button size="sm" class="my-2 my-sm-0 square-button text-dark img-fluid orange-color-change text-weight-bold" type="submit">{{card.ratingtop}}</b-button>
             </b-card-text>
             <b-card-text class="text-left timmer-color">
               <div>{{card.timer}}</div>
@@ -39,22 +39,13 @@
             <div></div>
             <div></div>
             <div>
-                <b-button size="sm" class="my-2 my-sm-0  margin-rating text-dark img-fluid rounded-circle btn-secondary text-weight-bold" type="submit">{{card.rating}}</b-button>
+                <b-button size="sm" class="my-2 my-sm-0  margin-rating text-dark img-fluid rounded-circle orange-color-change text-weight-bold" type="submit">{{card.rating}}</b-button>
             </div>
           </b-card>
         </div>
       </b-col>
     </b-row>
-    <div class="">
-    <!-- Use text in props -->
-    <b-pagination
-      v-model="currentPage"
-      :total-rows="rows"
-      :per-page="perPage"
-      next-text="Next"
-      last-text="Last"
-    ></b-pagination>
-  </div>
+    
   </b-container>
 </template>
 <script>
@@ -65,7 +56,7 @@ import images4 from "../assets/images/img4.jpg";
 import images5 from "../assets/images/img5.jpg";
 import images6 from "../assets/images/img6.jpg";
 import images7 from "../assets/images/img7.jpg";
-import images8 from "../assets/images/img8.jpg";
+import images8 from "../assets/images/girl.jpeg";
 export default {
   data() {
     return {
@@ -176,11 +167,11 @@ export default {
         }
       ]
     };
-    return {
-        rows: 100,
-        perPage: 6,
-        currentPage: 1
-      }
+    // return {
+    //     rows: 100,
+    //     perPage: 6,
+    //     currentPage: 1
+    //   }
   }
 };
 </script>

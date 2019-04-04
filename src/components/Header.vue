@@ -1,9 +1,10 @@
 <template>
   <b-container>
     <b-row>
-      <div class="wholediv col-md-12 mx-auto text-white px-5">
+      <b-col md="12" class="wholediv  mx-auto text-white px-5">
+       
         <div class="float-left vip-div my-auto font-weight-bold ">
-          <div ><span class="purple-div">VIP <em>SWEEPSTAKES</em></span></div>
+         <span class="purple-div">VIP <em>SWEEPSTAKES</em></span>
         </div>
         <div>
           <div class="float-left shopping-color text-font-next-shopp"> &5000 SHOPPING SPREE </div>
@@ -12,7 +13,8 @@
         <div>
           <div class="float-right text-font-next-shopp">Login</div>
         </div>
-      </div>
+       
+      </b-col>
     </b-row>
   </b-container>
 </template>
