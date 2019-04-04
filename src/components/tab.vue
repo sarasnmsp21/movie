@@ -45,7 +45,6 @@
         </div>
       </b-col>
     </b-row>
-    
   </b-container>
 </template>
 <script>
