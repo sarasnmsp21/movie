@@ -1,5 +1,10 @@
 <template>
-  <b-container>
+  <div>
+    <b-card no-body>
+      <b-tabs card>
+        <b-tab title="Coming Soon" active>
+          <b-card-text>
+            <b-container>
     <b-row>
       <b-col md="6" varient="secondary" class="p-0 m-0 " v-for="card in cards" v-bind:key="card.index">
         <div class="mt-5 px-3">
@@ -56,6 +61,14 @@
     ></b-pagination>
   </div>
   </b-container>
+          </b-card-text>
+        </b-tab>
+        <b-tab title="Tab 2">
+          <b-card-text></b-card-text>
+        </b-tab>
+      </b-tabs>
+    </b-card>
+  </div>
 </template>
 <script>
 import images1 from "../assets/images/img1.jpg";
@@ -202,10 +215,10 @@ export default {
     margin-top: -24px !important;
     
 }
-.card-body
-{
-    background-color:#8080803b;
-}
+// .card-body
+// {
+//     background-color:#8080803b;
+// }
 .card-img-left 
 {
         border-top-left-radius: 0;
@@ -230,4 +243,3 @@ export default {
     color: #f57f09;
 }
 </style>
-

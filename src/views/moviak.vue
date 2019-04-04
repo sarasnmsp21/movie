@@ -5,6 +5,7 @@
     <moviakmainnav></moviakmainnav>
     <moviaksection></moviaksection>
     <moviaktab></moviaktab>
+    <moviaktabp></moviaktabp>
   </div>
 </template>
 
@@ -15,13 +16,17 @@ import moviakHeading from "@/components/Header.vue";
 import moviakmainnav from "@/components/mainnav.vue";
 import moviaksection from "@/components/section.vue";
 import moviaktab from "@/components/tab.vue";
+import moviaktabp from "@/components/tabp.vue";
+
 
 export default {
   components: {
     moviakHeading,
     moviakmainnav,
     moviaksection,
-    moviaktab
+    moviaktab,
+    moviaktabp
+  
   }
 };
 </script>
