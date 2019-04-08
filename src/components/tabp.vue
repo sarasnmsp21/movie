@@ -1,8 +1,8 @@
 <template>
-  <div class="pt-5">
+  <div class="pt-5 div-outline">
     <b-container>
         <b-row>
-          <b-col md="12" class=" mx-auto">
+          <b-col md="12" class=" mx-auto div-outline">
         <b-row>
           <b-col >
             <b-row>
@@ -58,5 +58,14 @@ export default {
 .nav-link{
   color:gray !important;
 }
+.div-outline
+{
+  outline: none;
+}
+.tab-content > .active {
+    display: block;
+    outline: none !important;
+}
+
 
 </style>

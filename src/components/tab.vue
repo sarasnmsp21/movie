@@ -5,7 +5,10 @@
         <b-row>
           <b-col>
             <b-row>
-              <b-col
+              <b-col  v-model="currentPage"
+      :total-rows="10"
+      :per-page="4"
+      aria-controls="movie-card"
                 md="6"
                 varient="secondary"
                 class="p-0 m-0"
@@ -16,11 +19,11 @@
                   <b-card :img-src="card.img" img-alt="Card image" img-left class="mb-3">
                     <b-card-text class="text-left font-weight-bold">
                       <div>{{card.heading}}</div>
-                      <b-button
+                      <button
                         size="sm"
-                        class="my-2 my-sm-0 square-button text-dark img-fluid orange-color-change text-weight-bold"
+                        class="my-2 my-sm-0 square-button button-hover-outline text-dark img-fluid orange-color-change text-weight-bold"
                         type="submit"
-                      >{{card.ratingtop}}</b-button>
+                      >{{card.ratingtop}}</button>
                     </b-card-text>
                     <b-card-text class="text-left timmer-color">
                       <div>
@@ -80,15 +83,15 @@
                             <font-awesome-icon :icon="['fas','star']"/>
                             <font-awesome-icon :icon="['fas','star']"/>
                           </div>
-                          <div class="votes-font release-date-color">76 Votes</div>
+                          <div class="votes-font  release-date-color">76 Votes</div>
                         </b-col>
                         <b-col md="3">
                           <div>
-                            <b-button
+                            <button
                               size="sm"
-                              class="my-2 my-sm-0 margin-rating rating-border text-dark img-fluid rounded-circle orange-color-change text-weight-bold"
+                              class="my-2 my-sm-0 margin-rating button-hover-outline rating-border text-dark img-fluid rounded-circle orange-color-change text-weight-bold"
                               type="submit"
-                            >{{card.rating}}</b-button>
+                            >{{card.rating}}</button>
                           </div>
                         </b-col>
                       </b-row>
@@ -101,19 +104,12 @@
         </b-row>
       </b-col>
       <div class="px-auto mx-auto">
-        <b-pagination v-model="currentPage" :total-rows="rows" :per-page="perPage" class="mt-4">
-          <span class="text-warning" slot="next-text">Next</span>
-
-          <div slot="ellipsis-text">
-            <b-spinner small type="grow"></b-spinner>
-            <b-spinner small type="grow"></b-spinner>
-            <b-spinner small type="grow"></b-spinner>
-          </div>
-          <span slot="page" slot-scope="{ page, active }">
-            <b v-if="active">{{ page }}</b>
-            <i v-else>{{ page }}</i>
-          </span>
-        </b-pagination>
+         <b-pagination
+      v-model="currentPage"
+      :total-rows="10"
+      :per-page="4"
+      aria-controls="movie-card"
+    ></b-pagination>
       </div>
     </b-row>
   </b-container>
@@ -131,9 +127,117 @@ export default {
   data() {
     return {
       rows: 100,
-      currentPage: 3,
+       perPage: 1,
+      currentPage: 1,
       cards: [
+        {id:1,
+          img: images1,
+          heading: "The Girl on Train",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {id:2,
+          img: images2,
+          heading: "The Magnificent Seven",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {id:3,
+          img: images3,
+          heading: "Free State of Jones",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {id:4,
+          img: images4,
+          heading: "Sausage Party",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {id:5,
+          img: images5,
+          heading: "Kubo and the Two ",
+          timer: "01 hours 20 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.2",
+          ratingtop: "PG"
+        },
+        {id:6,
+          img: images6,
+          heading: "Bad Moms",
+          timer: "02 hours 40 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.5",
+          ratingtop: "G"
+        },
         {
+          img: images7,
+          heading: "The Sleeping Beauty - Australia",
+          timer: "02 hours 00 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "PG"
+        },
+        {
+          img: images8,
+          heading: "The Girl With All The Gifts",
+          timer: "02 hours 30 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.2",
+          ratingtop: "G"
+        },
+
+
+
+         {id:2,
           img: images1,
           heading: "The Girl on Train",
           timer: "02 hours 50 minutes",
@@ -198,23 +302,12 @@ export default {
           rating: "4.2",
           ratingtop: "PG"
         },
-        {
-          img: images6,
-          heading: "Bad Moms",
-          timer: "02 hours 40 minutes",
-          contenthead1: "Release:",
-          contenttext1: "Aug31,2017",
-          contenthead2: "Genre:",
-          contenttext2: "Drama",
-          contenthead3: "Language:",
-          contenttext3: "English",
-          rating: "4.5",
-          ratingtop: "G"
-        },
-        {
-          img: images7,
-          heading: "The Sleeping Beauty - Australia",
-          timer: "02 hours 00 minutes",
+
+
+        {id:3,
+          img: images1,
+          heading: "The Girl on Train",
+          timer: "02 hours 50 minutes",
           contenthead1: "Release:",
           contenttext1: "Aug31,2017",
           contenthead2: "Genre:",
@@ -222,12 +315,51 @@ export default {
           contenthead3: "Language:",
           contenttext3: "English",
           rating: "4.4",
-          ratingtop: "PG"
+          ratingtop: "G"
         },
         {
-          img: images8,
-          heading: "The Girl With All The Gifts",
-          timer: "02 hours 30 minutes",
+          img: images2,
+          heading: "The Magnificent Seven",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images3,
+          heading: "Free State of Jones",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images4,
+          heading: "Sausage Party",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images5,
+          heading: "Kubo and the Two ",
+          timer: "01 hours 20 minutes",
           contenthead1: "Release:",
           contenttext1: "Aug31,2017",
           contenthead2: "Genre:",
@@ -235,8 +367,146 @@ export default {
           contenthead3: "Language:",
           contenttext3: "English",
           rating: "4.2",
+          ratingtop: "PG"
+        },
+
+
+
+        {id:4,
+          img: images1,
+          heading: "The Girl on Train",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
           ratingtop: "G"
-        }
+        },
+        {
+          img: images2,
+          heading: "The Magnificent Seven",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images3,
+          heading: "Free State of Jones",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images4,
+          heading: "Sausage Party",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images5,
+          heading: "Kubo and the Two ",
+          timer: "01 hours 20 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.2",
+          ratingtop: "PG"
+        },
+       
+
+
+
+        {id:5,
+          img: images1,
+          heading: "The Girl on Train",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images2,
+          heading: "The Magnificent Seven",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images3,
+          heading: "Free State of Jones",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images4,
+          heading: "Sausage Party",
+          timer: "02 hours 50 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.4",
+          ratingtop: "G"
+        },
+        {
+          img: images5,
+          heading: "Kubo and the Two ",
+          timer: "01 hours 20 minutes",
+          contenthead1: "Release:",
+          contenttext1: "Aug31,2017",
+          contenthead2: "Genre:",
+          contenttext2: "Drama",
+          contenthead3: "Language:",
+          contenttext3: "English",
+          rating: "4.2",
+          ratingtop: "PG"
+        },
+       
       ]
     };
     // return {
@@ -248,61 +518,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.contenthead-font-size {
-  font-size: 10px;
-}
-.contenttext-border-right {
-  border-right: 1px solid #80808029;
-}
-.contenttext-border-bottom {
-  border-bottom: 1px solid #80808029;
-  margin-left: -21px;
-}
-.square-button {
-  float: right;
-  margin-right: -20px;
-  margin-top: -24px !important;
-}
-.card-body {
-  background-color: #8080803b;
-      padding-bottom: 7px;
-}
-.card-img-left {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.card {
-  border-radius: 0;
-}
-.btn-sm,
-.btn-group-sm > .btn {
-  border-radius: 0;
-}
-.margin-rating {
-  margin-top: 10px !important;
-  font-size: 21px;
-}
-.timmer-color {
-  font-size: 14px;
-  color: #f57f09;
-}
-.svg-inline--fa.fa-w-18 {
-  width: 0.6em;
-  color: orange;
-}
-.votes-font {
-  font-size: 13px;
-}
+@import "../assets/scss/tab.scss";
 
-.release-font-color {
-  color: #808080;
-}
-.release-date-color {
-  color: #000000b3;
-}
-.rating-border
-{
-  border: 2px solid white;
-}
 </style>
 

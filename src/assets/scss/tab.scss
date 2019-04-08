@@ -1,0 +1,63 @@
+
+$border-line:1px solid #80808029;
+$button-orange:#f57f09;
+
+.contenthead-font-size {
+    font-size: 10px;
+  }
+  .contenttext-border-right {
+    border-right: $border-line
+  }
+  .contenttext-border-bottom {
+    border-bottom: $border-line;
+    margin-left: -21px;
+  }
+  .square-button {
+    float: right;
+    margin-right: -20px;
+    margin-top: -24px !important;
+  }
+  .card-body {
+    background-color: #8080803b;
+        padding-bottom: 7px;
+  }
+  .card-img-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .card {
+    border-radius: 0;
+  }
+  .btn-sm,
+  .btn-group-sm > .btn {
+    border-radius: 0;
+  }
+  .margin-rating {
+    margin-top: 10px !important;
+    font-size: 21px;
+  }
+  .timmer-color {
+    font-size: 12px;
+    color: $button-orange
+  }
+  .svg-inline--fa.fa-w-18 {
+    width: 0.6em;
+    color: $button-orange
+  }
+  .votes-font {
+    font-size: 13px;
+  }
+  
+  .release-font-color {
+    color: #808080;
+  }
+  .release-date-color {
+    color: #000000b3;
+  }
+  .rating-border
+  {
+    border: 2px solid white;
+  }
+  .button-hover-outline{
+    outline: none !important;
+  }

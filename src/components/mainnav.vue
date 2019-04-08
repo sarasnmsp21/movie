@@ -14,21 +14,21 @@
                   <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav>
                       <b-form-input size="sm" class="mr-sm-2 ml-4" placeholder="Movie search..."></b-form-input>
-                      <b-button
+                      <button
                         size="sm"
                         class="my-2 my-sm-0 text-dark img-fluid left-to-go rounded-circle text-weight-bold orange-color-change"
                         type="submit"
-                      >Go</b-button>
+                      >Go</button>
                     </b-navbar-nav>
                     <div class="mx-auto p-0  mr-auto">
                     <b-navbar-nav
                       class="mx-auto font-weight-bold heading-title-font text-right"
                     >
-                      <b-nav-item href="#" class="p-1 text-dark">HOME</b-nav-item>
-                      <b-nav-item href="#" class="p-1">MOVIE LAYOUT</b-nav-item>
-                      <b-nav-item href="#" class="p-1">PAGE SINGLE</b-nav-item>
-                      <b-nav-item href="#" class="p-1">SHOWTIME</b-nav-item>
-                      <b-nav-item href="#" class="p-1 pr-0">TOP RATED</b-nav-item>
+                      <nav-item href="#" class="p-2 text-dark">HOME</nav-item>
+                      <nav-item href="#" class="p-2">MOVIE LAYOUT</nav-item>
+                      <nav-item href="#" class="p-2">PAGE SINGLE</nav-item>
+                      <nav-item href="#" class="p-2">SHOWTIME</nav-item>
+                      <nav-item href="#" class="p-2 pr-0">TOP RATED</nav-item>
                     </b-navbar-nav>
                     </div>
                   </b-collapse>
