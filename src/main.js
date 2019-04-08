@@ -28,7 +28,9 @@ import {
   faDumbbell,
   faEnvelopeOpenText,
   faPhone,
-  faEnvelope
+  faEnvelope,
+  faUser,
+  faStar
 } from "@fortawesome/free-solid-svg-icons"; //fas fa
 
 import {
@@ -41,10 +43,11 @@ import {
   faDribbble,
   faTelegramPlane,
   faFacebookF,
-  faPinterestP
+  faPinterestP,
+  faApple
 } from "@fortawesome/free-brands-svg-icons"; //fab
 
-import { faCommentAlt } from "@fortawesome/free-regular-svg-icons"; //far
+import { faCommentAlt, faClock } from "@fortawesome/free-regular-svg-icons"; //far
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -68,10 +71,12 @@ library.add(
   faDumbbell,
   faEnvelopeOpenText,
   faPhone,
-  faEnvelope
+  faEnvelope,
+  faUser,
+  faStar
 ); //fas
 
-library.add(faCommentAlt); //far
+library.add(faCommentAlt, faClock); //far
 
 library.add(
   faLinkedinIn,
@@ -83,7 +88,8 @@ library.add(
   faDribbble,
   faTelegramPlane,
   faFacebookF,
-  faPinterestP
+  faPinterestP,
+  faApple
 ); //fab
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

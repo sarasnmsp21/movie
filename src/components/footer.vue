@@ -1,6 +1,7 @@
 <template>
-  <b-container>
-    <div class="footer-containt">
+
+  <b-container fluid class="p-0">
+    <div class="footer-containt" >
       <b-row>
         <b-col md="12">
           <b-row>
@@ -27,18 +28,18 @@
                     <div class="footer-heading">
                       <strong>Custom Services</strong>
                     </div>
-                    <div class="custom-service pt-3 ">
+                    <div class="custom-service font-cus-ser pt-3 ">
                       <li class="p-2 ">
-                        <a href="#">Help &#038; Contact</a>
+                        <a href="#" class="font-cus-ser">Help &#038; Contact</a>
                       </li>
                       <li class="p-2">
-                        <a href="#">Return Policy</a>
+                        <a href="#" class="font-cus-ser">Return Policy</a>
                       </li>
                       <li class="p-2">
-                        <a href="#">Feed Back</a>
+                        <a href="#" class="font-cus-ser">Feed Back</a>
                       </li>
                       <li class="p-2">
-                        <a href="#">Careers</a>
+                        <a href="#" class="font-cus-ser">Careers</a>
                       </li>
                     </div>
                   </b-col>
@@ -58,9 +59,11 @@
                     <div class="pt-3 mb-2" ><font-awesome-icon :icon="['fab','telegram-plane']"/>  9067 Zurich, Switzerland 87</div>
                     <div class="mb-2"><font-awesome-icon :icon="['fas','envelope']"/>  abc@gmail.com</div>
                     <div class="mb-2 phone-text-color"><font-awesome-icon :icon="['fas','phone']"/>  01-234-5678</div>
-                    <div>
-                        <input type="email" placeholder="your email address" class="input-email pl-3" />
+                    <div class="email-icon">
+                        <input type="email" placeholder="your email address"  class="input-email pl-3" />
+                        <input type="submit" value="email">
                     </div>
+                    
                   </b-col>
                 </b-row>
               </div>
@@ -94,6 +97,7 @@
   
     </div>
   </b-container>
+ 
 </template>
 
 
@@ -137,15 +141,15 @@ width: 40px;
 {
  color: #615f5f;   
 }
-li > a
+.font-cus-ser
 {
     color: #bdbdbd !important;
     text-decoration: none !important;
 }
 .input-email
 {
-    background-color: #bdbdbd;
-        height: 32px;
+    background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0;
+    height: 32px;
     width: 180px;
     border:none;
 }
@@ -153,6 +157,10 @@ li > a
 {
     color: #fe7900;
 }
-
-
+.email-icon input[type="submit"] {
+    background: rgba(0, 0, 0, 0) url(../assets/images/emailicon.png)no-repeat scroll 0 0;
+        border: medium none;
+    height: 24px;
+ 
+}
 </style>
