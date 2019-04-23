@@ -1,5 +1,5 @@
 <template>
-  <b-container v-if="results.length > 0">
+  <b-container>
     <b-row>
       <b-col md="6" class="" v-for="card in results" v-bind:key="card.index">
         <div>
@@ -207,10 +207,7 @@ export default {
           ratingtop: "G"
         }
       ],
-      results: [],
-      search_query: "",
-      status: "",
-      path: "https://image.tmdb.org/t/p/w300_and_h450_bestv2"
+      results: []
     };
   },
   mounted() {
@@ -222,14 +219,14 @@ export default {
       .then(response => {
         console.log("movieapi", response.data.results);
         this.results = response.data.results;
-        var i;
-        for (i = 0; i < this.results.length; i++) {
-          this.results[i].img =
-            "https://image.tmdb.org/t/p/w300_and_h450_bestv2/" +
-            this.results[i].poster_path;
-          console.log("length", this.results);
-        }
       });
+  },
+  filters: {
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
   }
 };
 </script>

@@ -2,14 +2,14 @@
   <b-container>
     <b-col md="12">
       <b-row>
-        <b-col md="6" class="" v-for="card in cards" v-bind:key="card.index">
+        <b-col md="6" class="" v-for="card in upcoming" v-bind:key="card.index">
           <div class="">
             <b-card :img-src="card.img" img-left class="mb-4">
               <div class="d-flex">
-                <span class="picname-head-font">{{ card.heading }}</span>
+                <span class="picname-head-font">{{ card.title }}</span>
                 <span class="ml-auto">
                   <div class="bg-orange sm-div-font">
-                    {{ card.ratingtop }}
+                    {{ card.id }}
                   </div>
                 </span>
               </div>
@@ -18,7 +18,7 @@
                   <span class="clock-fontsize">
                     <font-awesome-icon :icon="['far', 'clock']" />
                   </span>
-                  {{ card.timer }}
+                  {{ card.id}}
                 </span>
               </div>
 
@@ -27,28 +27,28 @@
                   class="contenttext-border-right text-center movie-info-space pr-3 "
                 >
                   <div class=" movie-heading-font release-font-color">
-                    {{ card.contenthead1 }}
+                    {{ card.id }}
                   </div>
                   <div class=" movie-text-font release-date-color">
-                    {{ card.contenttext1 }}
+                    {{ card.release_date }}
                   </div>
                 </span>
                 <span
                   class="contenttext-border-right text-center  movie-info-space pr-3 pl-3"
                 >
                   <div class="movie-heading-font  release-font-color">
-                    {{ card.contenthead2 }}
+                    {{ card.id }}
                   </div>
                   <div class=" movie-text-font release-font-color">
-                    {{ card.contenttext2 }}
+                    {{ card.genre_ids }}
                   </div>
                 </span>
                 <span class="text-center  movie-info-space pl-3">
                   <div class="movie-heading-font  release-font-color">
-                    {{ card.contenthead3 }}
+                    {{ card.id }}
                   </div>
                   <div class=" movie-text-font release-date-color">
-                    {{ card.contenttext3 }}
+                    {{ card.original_language }}
                   </div>
                 </span>
               </div>
@@ -70,7 +70,7 @@
                 <div
                   class="margin-rating button-hover-outline rating-border review-point-font img-fluid rounded-circle bg-orange text-weight-bold"
                 >
-                  {{ card.rating }}
+                  {{ card.vote_average }}
                 </div>
               </div>
             </b-card>
@@ -89,6 +89,8 @@ import images5 from "../assets/images/img5.jpg";
 import images6 from "../assets/images/img6.jpg";
 import images7 from "../assets/images/img7.jpg";
 import images8 from "../assets/images/img8.jpg";
+import movieapi from "@/services/movieapi";
+import axios from "axios";
 export default {
   data() {
     return {
@@ -206,8 +208,20 @@ export default {
           rating: "4.2",
           ratingtop: "G"
         }
-      ]
+      ],
+      upcoming: []
     };
+  },
+  mounted() {
+    movieapi.getmovies();
+    axios
+      .get(
+        "https://api.themoviedb.org/3/movie/now_playing?api_key=4ac5c40e76b9008b1d49d0644746d7bb"
+      )
+      .then(response => {
+        console.log("movieapi", response.data.upcoming);
+        this.upcoming = response.data.upcoming;
+      });
   }
 };
 </script>
