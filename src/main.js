@@ -30,7 +30,8 @@ import {
   faPhone,
   faEnvelope,
   faUser,
-  faStar
+  faStar,
+  faStarHalfAlt
 } from "@fortawesome/free-solid-svg-icons"; //fas fa
 
 import {
@@ -73,7 +74,8 @@ library.add(
   faPhone,
   faEnvelope,
   faUser,
-  faStar
+  faStar,
+  faStarHalfAlt
 ); //fas
 
 library.add(faCommentAlt, faClock); //far

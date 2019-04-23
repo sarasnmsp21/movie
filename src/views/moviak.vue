@@ -1,11 +1,10 @@
-
 <template>
   <div class="home">
     <moviak-heading></moviak-heading>
     <moviakmainnav></moviakmainnav>
     <moviaksection></moviaksection>
     <moviaktabp></moviaktabp>
-   <footersection></footersection>
+    <footersection></footersection>
   </div>
 </template>
 
@@ -18,8 +17,6 @@ import moviaksection from "@/components/section.vue";
 import moviaktabp from "@/components/tabp.vue";
 import footersection from "@/components/footer.vue";
 
-
-
 export default {
   components: {
     moviakHeading,
@@ -27,18 +24,16 @@ export default {
     moviaksection,
     moviaktabp,
     footersection
-  
   }
 };
 </script>
 <style lang="scss">
 .nav-tabs {
-    border-bottom: none;
+  border-bottom: none;
 }
 .nav-tabs .nav-link {
-    border: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 </style>
-

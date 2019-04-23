@@ -1,79 +1,83 @@
 <template>
   <b-container>
-    <b-row>
-      <b-col md="6" class="" v-for="card in cards" v-bind:key="card.index">
-        <b-card :img-src="card.img" img-left class="mb-4">
-          <div class="d-flex">
-            <span class="picname-head-font">{{ card.heading }}</span>
-            <span class="ml-auto">
-              <div class="bg-orange sm-div-font">
-                {{ card.ratingtop }}
+    <b-col md="12">
+      <b-row>
+        <b-col md="6" class="" v-for="card in cards" v-bind:key="card.index">
+          <div class="">
+            <b-card :img-src="card.img" img-left class="mb-4">
+              <div class="d-flex">
+                <span class="picname-head-font">{{ card.heading }}</span>
+                <span class="ml-auto">
+                  <div class="bg-orange sm-div-font">
+                    {{ card.ratingtop }}
+                  </div>
+                </span>
               </div>
-            </span>
-          </div>
-          <div class="text-left timmer-color">
-            <span class="timer-lineheight ">
-              <span class="clock-fontsize">
-                <font-awesome-icon :icon="['far', 'clock']" />
-              </span>
-              {{ card.timer }}
-            </span>
-          </div>
+              <div class="text-left timmer-color">
+                <span class="timer-lineheight ">
+                  <span class="clock-fontsize">
+                    <font-awesome-icon :icon="['far', 'clock']" />
+                  </span>
+                  {{ card.timer }}
+                </span>
+              </div>
 
-          <div class="d-flex contenthead-font-size mb-3">
-            <span
-              class="contenttext-border-right text-center movie-info-space pr-3 "
-            >
-              <div class=" movie-heading-font release-font-color">
-                {{ card.contenthead1 }}
+              <div class="d-flex contenthead-font-size mb-3">
+                <span
+                  class="contenttext-border-right text-center movie-info-space pr-3 "
+                >
+                  <div class=" movie-heading-font release-font-color">
+                    {{ card.contenthead1 }}
+                  </div>
+                  <div class=" movie-text-font release-date-color">
+                    {{ card.contenttext1 }}
+                  </div>
+                </span>
+                <span
+                  class="contenttext-border-right text-center  movie-info-space pr-3 pl-3"
+                >
+                  <div class="movie-heading-font  release-font-color">
+                    {{ card.contenthead2 }}
+                  </div>
+                  <div class=" movie-text-font release-font-color">
+                    {{ card.contenttext2 }}
+                  </div>
+                </span>
+                <span class="text-center  movie-info-space pl-3">
+                  <div class="movie-heading-font  release-font-color">
+                    {{ card.contenthead3 }}
+                  </div>
+                  <div class=" movie-text-font release-date-color">
+                    {{ card.contenttext3 }}
+                  </div>
+                </span>
               </div>
-              <div class=" movie-text-font release-date-color">
-                {{ card.contenttext1 }}
-              </div>
-            </span>
-            <span
-              class="contenttext-border-right text-center  movie-info-space pr-3 pl-3"
-            >
-              <div class="movie-heading-font  release-font-color">
-                {{ card.contenthead2 }}
-              </div>
-              <div class=" movie-text-font release-font-color">
-                {{ card.contenttext2 }}
-              </div>
-            </span>
-            <span class="text-center  movie-info-space pl-3">
-              <div class="movie-heading-font  release-font-color">
-                {{ card.contenthead3 }}
-              </div>
-              <div class=" movie-text-font release-date-color">
-                {{ card.contenttext3 }}
-              </div>
-            </span>
-          </div>
-          <div class="contenttext-border-bottom"></div>
+              <div class="contenttext-border-bottom"></div>
 
-          <div class="d-flex mt-3">
-            <span class="mr-2">
-              <font-awesome-icon :icon="['fas', 'star']" />
-              <font-awesome-icon :icon="['fas', 'star']" />
-              <font-awesome-icon :icon="['fas', 'star']" />
-              <font-awesome-icon :icon="['fas', 'star']" />
-              <font-awesome-icon :icon="['fas', 'star-half-alt']" />
-              <div
-                class="votes-font votes-linehegiht  release-date-color text-left"
-              >
-                365 Votes
+              <div class="d-flex mt-3">
+                <span class="mr-2">
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star']" />
+                  <font-awesome-icon :icon="['fas', 'star-half-alt']" />
+                  <div
+                    class="votes-font votes-linehegiht  release-date-color text-left"
+                  >
+                    365 Votes
+                  </div>
+                </span>
+                <div
+                  class="margin-rating button-hover-outline rating-border review-point-font img-fluid rounded-circle bg-orange text-weight-bold"
+                >
+                  {{ card.rating }}
+                </div>
               </div>
-            </span>
-            <div
-              class="margin-rating button-hover-outline rating-border review-point-font img-fluid rounded-circle bg-orange text-weight-bold"
-            >
-              {{ card.rating }}
-            </div>
+            </b-card>
           </div>
-        </b-card>
-      </b-col>
-    </b-row>
+        </b-col>
+      </b-row>
+    </b-col>
   </b-container>
 </template>
 <script>
@@ -85,8 +89,6 @@ import images5 from "../assets/images/img5.jpg";
 import images6 from "../assets/images/img6.jpg";
 import images7 from "../assets/images/img7.jpg";
 import images8 from "../assets/images/img8.jpg";
-import movieapi from "@/services/movieapi";
-import axios from "axios";
 export default {
   data() {
     return {
@@ -204,20 +206,8 @@ export default {
           rating: "4.2",
           ratingtop: "G"
         }
-      ],
-      results: []
+      ]
     };
-  },
-  mounted() {
-    movieapi.getmovies();
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=e93194759dc620e1ff7aa7c9fb0e02d8"
-      )
-      .then(response => {
-        console.log("movieapi", response.data.results);
-        this.results = response.data.results;
-      });
   }
 };
 </script>

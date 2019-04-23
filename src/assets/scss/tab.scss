@@ -6,20 +6,13 @@ $button-orange:#f57f09;
     font-size: 10px;
   }
   .contenttext-border-right {
-    border-right: $border-line
+    border-right: $border-line;
   }
   .contenttext-border-bottom {
     border-bottom: $border-line;
-    margin-left: -21px;
-  }
-  .square-button {
-    float: right;
-    margin-right: -20px;
-    margin-top: -24px !important;
   }
   .card-body {
     background-color: #8080803b;
-        padding-bottom: 7px;
   }
   .card-img-left {
     border-top-left-radius: 0;
@@ -33,31 +26,72 @@ $button-orange:#f57f09;
     border-radius: 0;
   }
   .margin-rating {
-    margin-top: 10px !important;
-    font-size: 21px;
+    font-size: 15px;
   }
   .timmer-color {
-    font-size: 12px;
+    font-size: 11px;
     color: $button-orange
   }
   .svg-inline--fa.fa-w-18 {
-    width: 0.6em;
+    width: 0.7em;
+    padding-right: 2px;
     color: $button-orange
   }
+  .svg-inline--fa.fa-w-17 {
+    width: 0.7em;
+    color: $button-orange;
+    padding-right: 2px;
+}
   .votes-font {
-    font-size: 13px;
+    font-size: 12px;
   }
   
   .release-font-color {
-    color: #808080;
+    color: #b3aeae;
   }
   .release-date-color {
-    color: #000000b3;
+    color: #615d5d;
   }
   .rating-border
   {
     border: 2px solid white;
   }
-  .button-hover-outline{
-    outline: none !important;
+  .bg-orange{
+    background-color:  #fe7900;
+    color: white;
   }
+  .card-body {
+    background-color: #8080803b;
+    padding-right: 0px;
+    padding-left: 13px;
+    padding-top: 14px;
+    padding-bottom:0px;
+}
+.sm-div-font{
+  font-size: 10px;
+  padding: 5px 8px;
+}
+.picname-head-font{
+  font-size: 17px;
+}
+.movie-info-space{
+  margin: 10px 0px;
+}
+.movie-heading-font{
+  font-size:10px;
+}
+.movie-text-font{
+  font-size:11px;
+}
+.timer-lineheight{
+  line-height: 20px;
+}
+.clock-fontsize{
+  font-size: 10px;
+}
+.review-point-font{
+  padding: 6px 8px;
+}
+.votes-linehegiht{
+  line-height: 8px;
+}

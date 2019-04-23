@@ -1,14 +1,14 @@
 <template>
   <div class="overflow-auto">
     <p class="mt-3">Current Page: {{ currentPage }}</p>
-       <b-table
+    <b-table
       id="my-table"
       :items="items"
       :per-page="perPage"
       :current-page="currentPage"
       small
     ></b-table>
-      <b-pagination
+    <b-pagination
       v-model="currentPage"
       :total-rows="rows"
       :per-page="perPage"
@@ -18,15 +18,15 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
       rows: 100,
       perPage: 1,
       currentPage: 1,
-       cards: [
-        {id:1,
+      cards: [
+        {
+          id: 1,
           img: images1,
           heading: "The Girl on Train",
           timer: "02 hours 50 minutes",
@@ -39,7 +39,8 @@ export default {
           rating: "4.4",
           ratingtop: "G"
         },
-        {id:2,
+        {
+          id: 2,
           img: images2,
           heading: "The Magnificent Seven",
           timer: "02 hours 50 minutes",
@@ -52,7 +53,8 @@ export default {
           rating: "4.4",
           ratingtop: "G"
         },
-        {id:3,
+        {
+          id: 3,
           img: images3,
           heading: "Free State of Jones",
           timer: "02 hours 50 minutes",
@@ -131,9 +133,8 @@ export default {
           ratingtop: "G"
         },
 
-
-
-         {id:2,
+        {
+          id: 2,
           img: images1,
           heading: "The Girl on Train",
           timer: "02 hours 50 minutes",
@@ -199,8 +200,8 @@ export default {
           ratingtop: "PG"
         },
 
-
-        {id:3,
+        {
+          id: 3,
           img: images1,
           heading: "The Girl on Train",
           timer: "02 hours 50 minutes",
@@ -266,9 +267,8 @@ export default {
           ratingtop: "PG"
         },
 
-
-
-        {id:4,
+        {
+          id: 4,
           img: images1,
           heading: "The Girl on Train",
           timer: "02 hours 50 minutes",
@@ -333,11 +333,9 @@ export default {
           rating: "4.2",
           ratingtop: "PG"
         },
-       
 
-
-
-        {id:5,
+        {
+          id: 5,
           img: images1,
           heading: "The Girl on Train",
           timer: "02 hours 50 minutes",
@@ -401,11 +399,9 @@ export default {
           contenttext3: "English",
           rating: "4.2",
           ratingtop: "PG"
-        },
-       
+        }
       ]
     };
-  
   }
 };
 </script>
