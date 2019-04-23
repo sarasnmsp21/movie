@@ -60,5 +60,6 @@ export default {
 .nav-link {
   display: block;
   padding: 0.3rem 1.2rem 1.3rem 0rem;
+  margin-left: -9px;
 }
 </style>
