@@ -2,78 +2,76 @@
   <b-container>
     <b-row>
       <b-col md="6" class="" v-for="card in results" v-bind:key="card.index">
-        <div>
-          <b-card :img-src="card.img" img-left class="mb-4">
-            <div class="d-flex">
-              <span class="picname-head-font">{{ card.title }}</span>
-              <span class="ml-auto">
-                <div class="bg-orange sm-div-font">
-                  {{ card.id }}
-                </div>
-              </span>
-            </div>
-            <div class="text-left timmer-color">
-              <span class="timer-lineheight ">
-                <span class="clock-fontsize">
-                  <font-awesome-icon :icon="['far', 'clock']" />
-                </span>
-                {{ card.popularity }}
-              </span>
-            </div>
-
-            <div class="d-flex contenthead-font-size mb-3">
-              <span
-                class="contenttext-border-right text-center movie-info-space pr-3 "
-              >
-                <div class=" movie-heading-font release-font-color">
-                  {{ card.popularity }}
-                </div>
-                <div class=" movie-text-font release-date-color">
-                  {{ card.release_date }}
-                </div>
-              </span>
-              <span
-                class="contenttext-border-right text-center  movie-info-space pr-3 pl-3"
-              >
-                <div class="movie-heading-font  release-font-color">
-                  {{ card.popularity }}
-                </div>
-                <div class=" movie-text-font release-font-color">
-                  {{ card.release_date }}
-                </div>
-              </span>
-              <span class="text-center  movie-info-space pl-3">
-                <div class="movie-heading-font  release-font-color">
-                  {{ card.popularity }}
-                </div>
-                <div class=" movie-text-font release-date-color">
-                  {{ card.release_date }}
-                </div>
-              </span>
-            </div>
-            <div class="contenttext-border-bottom"></div>
-
-            <div class="d-flex mt-3">
-              <span class="mr-2">
-                <font-awesome-icon :icon="['fas', 'star']" />
-                <font-awesome-icon :icon="['fas', 'star']" />
-                <font-awesome-icon :icon="['fas', 'star']" />
-                <font-awesome-icon :icon="['fas', 'star']" />
-                <font-awesome-icon :icon="['fas', 'star-half-alt']" />
-                <div
-                  class="votes-font votes-linehegiht  release-date-color text-left"
-                >
-                  365 Votes
-                </div>
-              </span>
-              <div
-                class="margin-rating button-hover-outline rating-border review-point-font img-fluid rounded-circle bg-orange text-weight-bold"
-              >
-                {{ card.vote_average }}
+        <b-card :img-src="card.img" img-left class="mb-4">
+          <div class="d-flex">
+            <span class="picname-head-font">{{ card.title }}</span>
+            <span class="ml-auto">
+              <div class="bg-orange sm-div-font">
+                {{ card.id }}
               </div>
+            </span>
+          </div>
+          <div class="text-left timmer-color">
+            <span class="timer-lineheight ">
+              <span class="clock-fontsize">
+                <font-awesome-icon :icon="['far', 'clock']" />
+              </span>
+              {{ card.popularity }}
+            </span>
+          </div>
+
+          <div class="d-flex contenthead-font-size mb-3">
+            <span
+              class="contenttext-border-right text-center movie-info-space pr-3 "
+            >
+              <div class=" movie-heading-font release-font-color">
+                {{ card.popularity }}
+              </div>
+              <div class=" movie-text-font release-date-color">
+                {{ card.release_date }}
+              </div>
+            </span>
+            <span
+              class="contenttext-border-right text-center  movie-info-space pr-3 pl-3"
+            >
+              <div class="movie-heading-font  release-font-color">
+                {{ card.popularity }}
+              </div>
+              <div class=" movie-text-font release-font-color">
+                {{ card.release_date }}
+              </div>
+            </span>
+            <span class="text-center  movie-info-space pl-3">
+              <div class="movie-heading-font  release-font-color">
+                {{ card.popularity }}
+              </div>
+              <div class=" movie-text-font release-date-color">
+                {{ card.release_date }}
+              </div>
+            </span>
+          </div>
+          <div class="contenttext-border-bottom"></div>
+
+          <div class="d-flex mt-3">
+            <span class="mr-2">
+              <font-awesome-icon :icon="['fas', 'star']" />
+              <font-awesome-icon :icon="['fas', 'star']" />
+              <font-awesome-icon :icon="['fas', 'star']" />
+              <font-awesome-icon :icon="['fas', 'star']" />
+              <font-awesome-icon :icon="['fas', 'star-half-alt']" />
+              <div
+                class="votes-font votes-linehegiht  release-date-color text-left"
+              >
+                365 Votes
+              </div>
+            </span>
+            <div
+              class="margin-rating button-hover-outline rating-border review-point-font img-fluid rounded-circle bg-orange text-weight-bold"
+            >
+              {{ card.vote_average }}
             </div>
-          </b-card>
-        </div>
+          </div>
+        </b-card>
       </b-col>
     </b-row>
   </b-container>
@@ -87,7 +85,7 @@ import images5 from "../assets/images/img5.jpg";
 import images6 from "../assets/images/img6.jpg";
 import images7 from "../assets/images/img7.jpg";
 import images8 from "../assets/images/img8.jpg";
-import movieapi from "@/services/movieapi";
+// import movieapi from "@/services/movieapi";
 import axios from "axios";
 export default {
   data() {
@@ -211,7 +209,7 @@ export default {
     };
   },
   mounted() {
-    movieapi.getmovies();
+    // movieapi.getmovies();
     axios
       .get(
         "https://api.themoviedb.org/3/movie/now_playing?api_key=4ac5c40e76b9008b1d49d0644746d7bb"
@@ -220,14 +218,14 @@ export default {
         console.log("movieapi", response.data.results);
         this.results = response.data.results;
       });
-  },
-  filters: {
-    capitalize: function(value) {
-      if (!value) return "";
-      value = value.toString();
-      return value.charAt(0).toUpperCase() + value.slice(1);
-    }
   }
+  // filters: {
+  //   capitalize: function(value) {
+  //     if (!value) return "";
+  //     value = value.toString();
+  //     return value.charAt(0).toUpperCase() + value.slice(1);
+  //   }
+  // }
 };
 </script>
 <style lang="scss">
