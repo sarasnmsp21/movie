@@ -98,6 +98,11 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 
+Vue.filter("imgUrl", function(poster_path) {
+  if (!poster_path) return "";
+  return "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + poster_path;
+});
+
 new Vue({
   router,
   store,

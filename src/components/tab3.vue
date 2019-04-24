@@ -3,7 +3,7 @@
     <b-col md="12">
       <b-row>
         <b-col md="6" class="" v-for="card in upcoming" v-bind:key="card.index">
-          <b-card :img-src="card.img" img-left class="mb-4">
+          <b-card :img-src="card.poster_path" img-left class="mb-4">
             <div class="d-flex">
               <span class="picname-head-font">{{ card.title }}</span>
               <span class="ml-auto">
@@ -207,7 +207,8 @@ export default {
           ratingtop: "G"
         }
       ],
-      upcoming: []
+      upcoming: [],
+      imageUrl: "https://image.tmdb.org/t/p/w185_and_h278_bestv2"
     };
   },
   mounted() {
@@ -215,13 +216,22 @@ export default {
       .get(
         "https://api.themoviedb.org/3/movie/upcoming?api_key=4ac5c40e76b9008b1d49d0644746d7bb"
       )
-      .then(data => {
-        console.log("movieapi", data);
-        console.log("data.data", data.data);
-        console.log("results", data.data.results);
-        this.upcoming = data.data.results;
+      .then(info => {
+        console.log("movieapi", info);
+        // console.log("data.data", info.data);
+        // console.log("results", info.data.results);
+        this.upcoming = info.data.results;
+        for (var i = 0; i <= this.poster_path.length; i++) {
+          "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + poster_path;
+        }
       });
   }
+  // filters: {
+  //   imgUrl: function(poster_path) {
+  //     if (!poster_path) return "";
+  //     return "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + poster_path;
+  //   }
+  // }
 };
 </script>
 <style lang="scss">
