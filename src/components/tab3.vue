@@ -1,11 +1,18 @@
 <template>
   <b-container>
     <b-col md="12">
-      <b-row>
+      <!-- <section v-if="errored">
+        <p>
+          We're sorry, we're not able to retrieve this information at the
+          moment, please try back later
+        </p>
+      </section> -->
+
+      <b-row v-if="upcoming.length > 0">
         <b-col md="6" class="" v-for="card in upcoming" v-bind:key="card.index">
           <b-card :img-src="card.poster_path" img-left class="mb-4">
             <div class="d-flex">
-              <span class="picname-head-font">{{ card.title }}</span>
+              <span class="picname-head-font" v-format>{{ card.title }}</span>
               <span class="ml-auto">
                 <div class="bg-orange sm-div-font">
                   {{ card.id }}
@@ -22,7 +29,7 @@
               </span>
             </div>
 
-            <div class="d-flex contenthead-font-size mb-3">
+            <div class="d-flex contenthead-font-size mb-3" v-list="'narrow'">
               <span
                 class="contenttext-border-right text-center movie-info-space pr-3 "
               >
@@ -76,6 +83,7 @@
           </b-card>
         </b-col>
       </b-row>
+      <!-- <dir v-else>No data found!!!</dir> -->
     </b-col>
   </b-container>
 </template>
@@ -95,6 +103,8 @@ export default {
       rows: 100,
       perPage: 1,
       currentPage: 1,
+      loading: true,
+      errored: false,
       cards: [
         {
           id: 1,
@@ -207,6 +217,7 @@ export default {
           ratingtop: "G"
         }
       ],
+      blank: [],
       upcoming: [],
       imageUrl: "https://image.tmdb.org/t/p/w185_and_h278_bestv2"
     };
@@ -221,18 +232,28 @@ export default {
         // console.log("data.data", info.data);
         // console.log("results", info.data.results);
         this.upcoming = info.data.results;
-        for (var i = 0; i <= this.poster_path.length; i++) {
-          "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + poster_path;
+
+        console.log("abc", this.upcoming);
+
+        for (var i = 0; i <= this.upcoming.length; i++) {
+          this.upcoming[i].poster_path =
+            "https://image.tmdb.org/t/p/w185_and_h278_bestv2" +
+            this.upcoming[i].poster_path;
         }
-      });
+      })
+      .catch(error => {
+        console.log(error);
+        this.errored = true;
+      })
+      .finally(() => (this.loading = false));
   }
-  // filters: {
-  //   imgUrl: function(poster_path) {
-  //     if (!poster_path) return "";
-  //     return "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + poster_path;
-  //   }
-  // }
 };
+// filters: {
+//   imgUrl: function(poster_path) {
+//     if (!poster_path) return "";
+//     return "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + poster_path;
+//   }
+// }
 </script>
 <style lang="scss">
 @import "../assets/scss/tab.scss";

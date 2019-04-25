@@ -2,7 +2,7 @@
   <b-container>
     <b-row>
       <b-col md="6" class="" v-for="card in results" v-bind:key="card.index">
-        <b-card :img-src="card.img" img-left class="mb-4">
+        <b-card :img-src="card.imgUrl" img-left class="mb-4">
           <div class="d-flex">
             <span class="picname-head-font">{{ card.title }}</span>
             <span class="ml-auto">
@@ -217,6 +217,11 @@ export default {
       .then(response => {
         console.log("movieapi", response.data.results);
         this.results = response.data.results;
+        for (var i = 0; i <= this.results.length; i++) {
+          this.results[i].imgUrl =
+            "https://image.tmdb.org/t/p/w185_and_h278_bestv2" +
+            this.results[i].imgUrl;
+        }
       });
   }
   // filters: {

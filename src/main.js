@@ -103,6 +103,25 @@ Vue.filter("imgUrl", function(poster_path) {
   return "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + poster_path;
 });
 
+Vue.directive("list", {
+  bind(el, binding) {
+    if (binding.value == "wide") {
+      el.style.color = "red";
+      el.style.fontSize = "20px";
+    }
+    if (binding == "narrow") {
+      el.style.color = "green";
+    }
+  }
+});
+
+Vue.directive("format", {
+  bind(el) {
+    el.style.color = "blue";
+    el.style.fontSize = "20px";
+  }
+});
+
 new Vue({
   router,
   store,

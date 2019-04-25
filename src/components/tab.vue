@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-row>
+    <b-row v-if="tab1">
       <b-col md="6" class="" v-for="card in cards" v-bind:key="card.index">
         <b-card :img-src="card.img" img-left class="mb-4">
           <div class="d-flex">
@@ -74,6 +74,7 @@
         </b-card>
       </b-col>
     </b-row>
+    <div v-else>No data found!!!</div>
   </b-container>
 </template>
 <script>
@@ -93,6 +94,7 @@ export default {
       rows: 100,
       perPage: 1,
       currentPage: 1,
+      // tab1: true,
       cards: [
         {
           id: 1,
